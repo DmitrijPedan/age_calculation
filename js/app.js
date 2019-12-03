@@ -1,9 +1,9 @@
 console.log('age_calculation')
 
-// let currentDate = new Date ();
-// console.log(currentDate.getFullYear());
-// console.log(currentDate.getMonth());
-// console.log(currentDate.getDate());
+let currentDate = new Date ();
+console.log(currentDate.getFullYear(), typeof(currentDate.getFullYear()));
+console.log(currentDate.getMonth(), typeof(currentDate.getMonth()));
+console.log(currentDate.getDate(), typeof(currentDate.getDate()));
 
 const months = {
     january: 3,
@@ -20,37 +20,45 @@ const months = {
     december: 12,
 }
 
-let user = {
-    Name: prompt('Your name:', ""),
-    Year: prompt('Your year:', ""), 
-    Month: months[prompt('Your month:', "")],
-    Date: prompt('Your day:', ""),
-};
-
 let date = {
     Year: 2019,
-    Month: 1,
-    Day: 4,
+    Month: 12,
+    Day: 22,
 };
 
+alert(date);
+
+let user = {
+    Name: prompt('Ваше имя:', ""),
+    Year: prompt('Год Вашего рождения:', ""), 
+    Month: months[prompt('Месяц Вашего рождения(по английски):', "")],
+    Date: prompt('День Вашего рождения:', ""),
+};
+
+let ages;
 
 if (date.Month > user.Month) {
-    console.log(date.Year - user.Year);
+    ages = date.Year - user.Year;
+    alert(user.Name + ', вам ' + ages);
 } else if (date.Month < user.Month) {
-    console.log(date.Year - user.Year - 1);
+    ages = date.Year - user.Year - 1;
+    alert(user.Name + ', вам ' + ages);
 } else {
     if (date.Day > user.Day) {
-        console.log(date.Year - user.Year);
+        ages = date.Year - user.Year;
+        alert(user.Name + ', вам ' + ages);
     } else if (date.Day < user.Day) {
-        console.log(date.Year - user.Year - 1);
+        ages = date.Year - user.Year - 1;
+        alert(user.Name + ', вам ' + ages);
     } else {
-        console.log(date.Year - user.Year + 'hd');
+        ages = date.Year - user.Year;
+        alert(user.Name + ' c днем рождения! Вам сегодня ' + ages);
     }
 }
 
-console.log(user, typeof(user));
 console.log(user.Name, typeof(user.Name));
 console.log(user.Year, typeof(user.Year));
 console.log(user.Month, typeof(user.Month));
 console.log(user.Date, typeof(user.Date));
+console.log(ages, typeof(ages));
 
