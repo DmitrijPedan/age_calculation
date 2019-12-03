@@ -1,10 +1,5 @@
 console.log('age_calculation')
 
-let currentDate = new Date ();
-console.log(currentDate.getFullYear(), typeof(currentDate.getFullYear()));
-console.log(currentDate.getMonth(), typeof(currentDate.getMonth()));
-console.log(currentDate.getDate(), typeof(currentDate.getDate()));
-
 const months = {
     january: 3,
     february: 2,
@@ -20,10 +15,12 @@ const months = {
     december: 12,
 }
 
+let currentDate = new Date ();
+
 let date = {
-    Year: 2019,
-    Month: 12,
-    Day: 22,
+    Year: currentDate.getFullYear(),
+    Month: currentDate.getMonth(),
+    Day: currentDate.getDate(),
 };
 
 alert(date);
@@ -37,21 +34,21 @@ let user = {
 
 let ages;
 
-if (date.Month > user.Month) {
-    ages = date.Year - user.Year;
+if (currentDate.getMonth() > user.Month) {
+    ages = currentDate.getFullYear() - user.Year;
     alert(user.Name + ', вам ' + ages);
-} else if (date.Month < user.Month) {
-    ages = date.Year - user.Year - 1;
+} else if (currentDate.getMonth() < user.Month) {
+    ages = currentDate.getFullYear() - user.Year - 1;
     alert(user.Name + ', вам ' + ages);
 } else {
-    if (date.Day > user.Day) {
-        ages = date.Year - user.Year;
+    if (currentDate.getDate() > user.Day) {
+        ages = currentDate.getFullYear() - user.Year;
         alert(user.Name + ', вам ' + ages);
-    } else if (date.Day < user.Day) {
-        ages = date.Year - user.Year - 1;
+    } else if (currentDate.getDate() < user.Day) {
+        ages = currentDate.getFullYear() - user.Year - 1;
         alert(user.Name + ', вам ' + ages);
     } else {
-        ages = date.Year - user.Year;
+        ages = currentDate.getFullYear() - user.Year;
         alert(user.Name + ' c днем рождения! Вам сегодня ' + ages);
     }
 }
@@ -60,5 +57,8 @@ console.log(user.Name, typeof(user.Name));
 console.log(user.Year, typeof(user.Year));
 console.log(user.Month, typeof(user.Month));
 console.log(user.Date, typeof(user.Date));
+console.log(currentDate.getFullYear(), typeof(currentDate.getFullYear()));
+console.log(currentDate.getMonth(), typeof(currentDate.getMonth()));
+console.log(currentDate.getDate(), typeof(currentDate.getDate()));
 console.log(ages, typeof(ages));
 
