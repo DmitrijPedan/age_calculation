@@ -1,18 +1,18 @@
-console.log('age_calculation')
+console.log('Age_calculation:')
 
 const months = {
-    january: 3,
-    february: 2,
-    march: 3,
-    april: 4,
-    may: 5,
-    june: 6,
-    july: 7,
-    august: 8,
-    september: 9,
-    october: 10,
-    november: 11,
-    december: 12,
+    january: 0,
+    february: 1,
+    march: 2,
+    april: 3,
+    may: 4,
+    june: 5,
+    july: 6,
+    august: 7,
+    september: 8,
+    october: 9,
+    november: 10,
+    december: 11,
 }
 
 let currentDate = new Date ();
@@ -23,42 +23,42 @@ let date = {
     Day: currentDate.getDate(),
 };
 
-alert(date);
+alert('Текущая дата: ' + date.Day + ' число, ' + date.Month + ' месяц, ' + date.Year + ' год');
 
 let user = {
     Name: prompt('Ваше имя:', ""),
     Year: prompt('Год Вашего рождения:', ""), 
-    Month: months[prompt('Месяц Вашего рождения(по английски):', "")],
-    Date: prompt('День Вашего рождения:', ""),
+    Month: months[prompt('Месяц Вашего рождения(на английском):', "")],
+    Day: prompt('День Вашего рождения:', ""),
 };
 
 let ages;
 
-if (currentDate.getMonth() > user.Month) {
-    ages = currentDate.getFullYear() - user.Year;
+if (date.Month > user.Month) {
+    ages = date.Year - user.Year;
     alert(user.Name + ', вам ' + ages);
-} else if (currentDate.getMonth() < user.Month) {
-    ages = currentDate.getFullYear() - user.Year - 1;
+} else if (date.Month < user.Month) {
+    ages = date.Year - user.Year - 1;
     alert(user.Name + ', вам ' + ages);
 } else {
-    if (currentDate.getDate() > user.Day) {
-        ages = currentDate.getFullYear() - user.Year;
+    if (date.Day > user.Day) {
+        ages = date.Year - user.Year;
         alert(user.Name + ', вам ' + ages);
-    } else if (currentDate.getDate() < user.Day) {
-        ages = currentDate.getFullYear() - user.Year - 1;
+    } else if (date.Day < user.Day) {
+        ages = date.Year - user.Year - 1;
         alert(user.Name + ', вам ' + ages);
     } else {
-        ages = currentDate.getFullYear() - user.Year;
+        ages = date.Year - user.Year;
         alert(user.Name + ' c днем рождения! Вам сегодня ' + ages);
     }
 }
 
-console.log(user.Name, typeof(user.Name));
-console.log(user.Year, typeof(user.Year));
-console.log(user.Month, typeof(user.Month));
-console.log(user.Date, typeof(user.Date));
-console.log(currentDate.getFullYear(), typeof(currentDate.getFullYear()));
-console.log(currentDate.getMonth(), typeof(currentDate.getMonth()));
-console.log(currentDate.getDate(), typeof(currentDate.getDate()));
-console.log(ages, typeof(ages));
+console.log('Пользователь имя: ', user.Name, typeof(user.Name));
+console.log('Пользователь год: ',user.Year, typeof(user.Year));
+console.log('Пользователь месяц: ',user.Month, typeof(user.Month));
+console.log('Пользователь день: ',user.Day, typeof(user.Day));
+console.log('Текущее год: ',currentDate.getFullYear(), typeof(currentDate.getFullYear()));
+console.log('Текущее месяц: ',currentDate.getMonth(), typeof(currentDate.getMonth()));
+console.log('Текущее мксяц: ',currentDate.getDate(), typeof(currentDate.getDate()));
+console.log('Результат возраст: ',ages, typeof(ages));
 
