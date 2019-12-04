@@ -1,4 +1,6 @@
-console.log('Age_calculation:')
+console.log('Age_calculation:');
+
+let currentDate = new Date ();
 
 const months = {
     january: 0,
@@ -13,9 +15,7 @@ const months = {
     october: 9,
     november: 10,
     december: 11,
-}
-
-let currentDate = new Date ();
+};
 
 let date = {
     Year: currentDate.getFullYear(),
@@ -32,24 +32,24 @@ let user = {
     Day: prompt('День Вашего рождения:', ""),
 };
 
-let ages;
+let result;
 
 if (date.Month > user.Month) {
-    ages = date.Year - user.Year;
-    alert(user.Name + ', вам ' + ages);
+    result = date.Year - user.Year;
+    alert(user.Name + ', Вам ' + result);
 } else if (date.Month < user.Month) {
-    ages = date.Year - user.Year - 1;
-    alert(user.Name + ', вам ' + ages);
+    result = date.Year - user.Year - 1;
+    alert(user.Name + ', Вам ' + result);
 } else {
     if (date.Day > user.Day) {
-        ages = date.Year - user.Year;
-        alert(user.Name + ', вам ' + ages);
+        result = date.Year - user.Year;
+        alert(user.Name + ', Вам ' + result);
     } else if (date.Day < user.Day) {
-        ages = date.Year - user.Year - 1;
-        alert(user.Name + ', вам ' + ages);
+        result = date.Year - user.Year - 1;
+        alert(user.Name + ', Вам ' + result);
     } else {
-        ages = date.Year - user.Year;
-        alert(user.Name + ' c днем рождения! Вам сегодня ' + ages);
+        result = date.Year - user.Year;
+        alert(user.Name + ', c днем рождения! Вам сегодня ' + result);
     }
 }
 
@@ -59,6 +59,6 @@ console.log('Пользователь месяц: ',user.Month, typeof(user.Mont
 console.log('Пользователь день: ',user.Day, typeof(user.Day));
 console.log('Текущее год: ',currentDate.getFullYear(), typeof(currentDate.getFullYear()));
 console.log('Текущее месяц: ',currentDate.getMonth(), typeof(currentDate.getMonth()));
-console.log('Текущее мксяц: ',currentDate.getDate(), typeof(currentDate.getDate()));
-console.log('Результат возраст: ',ages, typeof(ages));
+console.log('Текущее день: ',currentDate.getDate(), typeof(currentDate.getDate()));
+console.log('Результат возраст: ',result, typeof(result));
 
