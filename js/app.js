@@ -27,9 +27,9 @@ alert('Текущая дата: ' + date.Day + ' число, ' + date.Month + ' 
 
 let user = {
     Name: prompt('Ваше имя:', ""),
-    Year: prompt('Год Вашего рождения:', ""), 
+    Year: +prompt('Год Вашего рождения:', ""), 
     Month: months[prompt('Месяц Вашего рождения(на английском):', "")],
-    Day: prompt('День Вашего рождения:', ""),
+    Day: +prompt('День Вашего рождения:', ""),
 };
 
 let result;
