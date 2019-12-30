@@ -34,3 +34,4 @@ if (date.Month > user.Month) {
         alert(user.Name + ', c днем рождения! Вам сегодня ' + result);
     }
 }
+history.back();
